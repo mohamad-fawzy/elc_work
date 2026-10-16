@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_elc_panel_user,elc.panel user,model_elc_panel,base.group_user,1,1,1,1
+access_elc_cable_data_user,elc.cable.data user,model_elc_cable_data,base.group_user,1,1,1,1

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Cable List -->
+    <record id="view_elc_cable_list" model="ir.ui.view">
+        <field name="name">elc.cable.data.list</field>
+        <field name="model">elc.cable.data</field>
+        <field name="arch" type="xml">
+            <list string="Electrical Cables">
+                <field name="cable_no"/>
+                <field name="from_panel_id"/>
+                <field name="to_panel_id"/>
+                <field name="destination_box"/>
+                <field name="terminal_numbers"/>
+                <field name="active" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Cable Form -->
+    <record id="view_elc_cable_form" model="ir.ui.view">
+        <field name="name">elc.cable.data.form</field>
+        <field name="model">elc.cable.data</field>
+        <field name="arch" type="xml">
+            <form string="Electrical Cable">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="cable_no"/>
+                        <h1>
+                            <field name="cable_no"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group string="Cable Identification">
+                            <field name="active"/>
+                        </group>
+                        <group string="Cable Size">
+                            <field name="cores"/>
+                            <field name="cross_section"/>
+                            <field name="size_display" readonly="True"/>
+                        </group>
+                    </group>
+
+                    <group string="Cable Route">
+                        <group>
+                            <field name="from_panel_id"/>
+                            <field name="terminal_numbers"/>
+                        </group>
+                        <group>
+                            <field name="to_panel_id"/>
+                            <field name="destination_box"/>
+                        </group>
+                    </group>
+
+                    <group>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Cable Search -->
+    <!-- <record id="view_elc_cable_search" model="ir.ui.view">
+        <field name="name">elc.cable.data.search</field>
+        <field name="model">elc.cable.data</field>
+        <field name="arch" type="xml">
+            <search string="Search Cables">
+                <field name="cable_no"/>
+                <field name="name"/>
+                <field name="from_panel_id"/>
+                <field name="to_panel_id"/>
+                <field name="destination_box"/>
+                <field name="terminal_numbers"/>
+
+                <filter name="active_cables"
+                        string="Active"
+                        domain="[('active', '=', True)]"/>
+
+                <filter name="archived_cables"
+                        string="Archived"
+                        domain="[('active', '=', False)]"/>
+
+                <group expand="0" string="Group By">
+                    <filter name="group_source_panel"
+                            string="Source Panel"
+                            context="{'group_by': 'from_panel_id'}"/>
+
+                    <filter name="group_destination_panel"
+                            string="Destination Panel"
+                            context="{'group_by': 'to_panel_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record> -->
+
+    <!-- Cable Action -->
+    <record id="action_elc_cables" model="ir.actions.act_window">
+        <field name="name">Electrical Cables</field>
+        <field name="res_model">elc.cable.data</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

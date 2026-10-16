@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="menu_elc_root"
+              name="Electrical Work"
+              sequence="30"/>
+
+    <menuitem id="menu_elc_panels"
+              name="Electrical Panels"
+              parent="menu_elc_root"
+              action="action_elc_panels"
+              sequence="10"/>
+
+    <menuitem id="menu_elc_cables"
+              name="Electrical Cables"
+              parent="menu_elc_root"
+              action="action_elc_cables"
+              sequence="20"/>
+</odoo>
